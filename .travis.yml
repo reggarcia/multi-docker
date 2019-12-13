@@ -13,7 +13,7 @@ after_success:
     - docker build -t mgarcia11/multi-server ./server
     - docker build -t mgarcia11/multi-nginx ./nginx
     # Log in to the docker CLI
-    - echo "$DOCKER_PASSWORD" | docker login -u $"DOCKER_ID" --password-stdin
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     # Take those images and pushh them to docker hub
     - docker push -t mgarcia11/multi-client ./client
     - docker push -t mgarcia11/multi-worker ./worker
