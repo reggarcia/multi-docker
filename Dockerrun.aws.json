@@ -1,5 +1,5 @@
 {
-    "AWSEMDockerrunVersion": 2,
+    "AWSEBDockerrunVersion": 2,
     "containerDefintions": [{
         "name": "client",
         "image": "mgarcia11/multi-client",
