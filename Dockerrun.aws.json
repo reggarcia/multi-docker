@@ -1,0 +1,32 @@
+{
+    "AWSEMDockerrunVersion": 2,
+    "containerDefintions": [{
+        "name": "client",
+        "image": "mgarcia11/multi-client",
+        "hostname": "client",
+        "essential": true
+    }, {
+        "name": "server",
+        "image": "mgarcia11/multi-server",
+        "hostname": "api",
+        "essential": false
+    }, {
+        "name": "worker",
+        "image": "mgarcia11/multi-worker",
+        "hostname": "worker",
+        "essential": false
+    }, {
+        "name": "nginx",
+        "image": "mgarcia11/multi-nginx",
+        "hostname": "nginx",
+        "essential": true,
+        "portMappings": [{
+            "hostPort": 80,
+            "containerPort": 80
+        }],
+        "links":[
+            "client", "server"
+
+        ]
+    }]
+}
